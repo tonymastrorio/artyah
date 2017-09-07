@@ -5,21 +5,73 @@ html {
 
 /*header*/
 
-#toplogo {
-    max-width: 120px;
+.top-1, .top-2, .top-3 {
+    display: inline-block;
 }
 
-header .title {
+@media only screen and (max-width: 768px) {
+    div.top-1, div.top-2, div.top-3 {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    div.top-1-collapsed, div.top-2-collapsed, div.top-3-collapsed {
+        display: none;
+    }
+}
+
+.top-1-collapsed, .top-2-collapsed, .top-3-collapsed {
+    display: inline-block;
+    float: left;
+    width: 33.33%;
+}
+
+
+
+.top-1 {
+    width: 43%;
+    margin:0;
+    padding:0;
+    padding-left: 40px;
+    border:0;
+    float:left;
+}
+.top-2 {
+    width: 14%;
+    margin:0;
+    padding:0;
+    border:0;
+    float:left;
+}
+
+#topnavdiv {
+    width: 43%;
+    margin:0;
+    padding:0;
+    padding-right: 40px;
+    border:0;
+    clear:both;
+    text-align: right;
+}
+
+@media only screen and (min-width: 768px) {
+div#topnavdiv.collapse.navbar-collapse {
+    display: inline-block !important;
+    }
+}
+
+
+.title {
     font-family: HaloHandletter;
     color: #9a7d85;
     font-size: 3.8em;
     text-align: center;
-    margin-top: 20px;
 }
 
-header .search {
-    margin-top: 30px;
+.search {
     display: inline-block;
+    margin-top: 15px;
 }
 
 .search .box {
@@ -29,7 +81,7 @@ header .search {
     color: #1e1e1e;
     padding: 0 10px;
     height: 40px;
-    width: 293px;
+    width: 210px;
 }
 
 .search .box:focus {
@@ -55,13 +107,11 @@ header .search {
 }
 
 .links {
-    margin-top: 40px;
-    text-align: center;
-    float: right;
+    margin-top: 20px;
 }
 
 .links div {
-    font-size: 15px;
+    font-size: 16px;
     font-family: Montserrat-Regular;
     display: inline-block;
     color: #9a7d85;
@@ -88,17 +138,8 @@ header .search {
     text-decoration: none;
 }
 
-@media only screen and (max-width: 768px) {
-    #header-container {
-        text-align: center;
-    }
-    .links {
-        float: none;
-        margin-top: 20px;
-    }
-}
-
 /* navbar */
+
 .navbar-default {
     background-color: #D8E2DC;
     border: none;
@@ -125,6 +166,21 @@ header .search {
 
 .navbar .navbar-collapse {
   text-align: center;
+}
+
+#nav1 {
+    background: #fff;
+    margin-top: 15px;
+}
+
+#nav2 {
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    nav#nav2.navbar.navbar-default {
+        max-height: 0;
+    }
 }
 
 @media only screen and (max-width: 1206px) {
@@ -155,25 +211,6 @@ header .search {
 
 /*Carousel 1*/
 
-#carousel-1 .carousel-control.right, #carousel-1 .carousel-control.left { 
-    opacity: 1;
-}
-
-.carousel-control > img{        
-    position: absolute;
-    /*set position of image from top to be 50%...*/
-    top: 50%;
-    /*and then shift it down to make it perfectly center.*/
-    transform: translate(-50%, -50%);
-
-    z-index: 5;
-    display: inline-block;
-}
-
-.carousel-control {
-    width: 7%;
-}
-
 #carousel-1 {
     width: 100%;
 }
@@ -199,13 +236,6 @@ header .search {
     text-align: left;
     color: white;
     text-shadow: 0 1px 2px rgba(0,0,0,.6);
-}
-
-@media only screen and (min-width: 768px) {
-    #carousel-1 .carousel-caption {
-        right: 15%;
-        left: 15%;
-    }
 }
 
 #carousel-1 .carousel-caption button {
@@ -279,40 +309,6 @@ header .search {
     opacity: 1;
 }
 
-#carousel-2 .carousel-caption {
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    bottom: initial;
-    text-align: left;
-    color: white;
-    text-shadow: none;
-}
-
-#carousel-2 .carousel-caption button {
-    background: #1e1e1e;
-    border: none;
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-weight: bold;
-    font-size: 16px;
-    font-family: Montserrat-Light;
-    color: #ffffff;
-}
-
-#carousel-2 .carousel-caption h2 {
-    font-family: Adobe-Garamond-Pro-Italic;
-    font-size: 40px;
-    color: #1e1e1e;
-}
-
-#carousel-2 .carousel-caption p {
-    font-family: Montserrat-Light;
-    font-size: 24px;
-    width: 40%;
-    color: #1e1e1e;
-    /*padding-bottom: 10px;*/
-}
 
 
 /*Main*/
@@ -385,7 +381,7 @@ a .caption {
 
 #marketplace_container {
     border-bottom: 1px solid #CCCCCC;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -422,7 +418,7 @@ a .caption {
 }
 
 .center-section {
-    margin-top: 50px;
+    margin-top: 75px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -452,12 +448,12 @@ a .caption {
 
 #gifts_container {
     border-bottom: 1px solid #CCCCCC;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 #collections_container {
     border-bottom: 1px solid #CCCCCC;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 #room_container {
@@ -470,7 +466,7 @@ a .caption {
 }
 
 #three-col-content h4 {
-    margin-top: 40px;
+    margin-top: 60px;
     font-family: Adobe-Garamond-Pro-Italic;
     font-size: 34pt;
 }
@@ -480,27 +476,6 @@ a .caption {
     font-size: 16px;
     width: 95%;
     margin-top: 15px;
-}
-
-.see-more {
-    text-align: center;
-    margin-top: 15px;
-    font-family: Montserrat-Regular, sans-serif;
-    font-size: 16px;
-}
-
-.see-more p {
-    margin-bottom: 0;
-}
-
-.see-more span {
-    font-size: 15px;
-}
-
-@media only screen and (max-width: 992px) {
-    #three-col-content {
-    text-align: center;
-    }
 }
 
 /*Footer*/
@@ -527,12 +502,12 @@ footer {
 
 .bbb_dynamic {
     padding-left: 40px;
-    padding-top: 10px;
+    padding-top: 30px;
 }
 
 #copyright {
     float: right;
-    padding-top: 40px;
+    padding-top: 60px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -546,18 +521,6 @@ footer {
     div.addthis_toolbox {
         width: 180px;
         margin: 0 auto;
-    }
-    div #logo-footer {
-        float: none;
-        text-align: center;
-        margin-right: 0;
-    }
-    .footer-logo-div {
-        text-align: center;
-    }
-    img#logo-footer {
-        padding-top: 10px;
-        padding-bottom: 10px;
     }
 }
 
@@ -576,11 +539,4 @@ footer {
 
 .centerfix .img-responsive {
     margin: 0 auto;
-}
-
-#logo-footer {
-    width: 125px;
-    float: right;
-    padding-top: 30px;
-    margin-right: 42px;  
 }
